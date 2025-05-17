@@ -24,78 +24,40 @@
 **JDBC**: Java Database Connectivity API (used under the hood via Hibernate) for database communication.
 
 
-Description (Module-wise Statement-wise)
-1. Configuration Module
-The application is configured using the application.properties file.
+## Purpose of the Project
+The primary goal of this application is to demonstrate the implementation of a real-world web-based CRUD system using modern technologies while solving a practical problem—managing student data efficiently. This includes capturing student information such as name, contact details, registration number, and profile image in a central system.
 
-It defines the database connection URL, username, and password to connect with MySQL.
+The system is tailored to:
 
-Hibernate is configured to automatically update the database schema based on entity changes.
+  - Allow student self-registration with personal and academic details.
 
-The view resolver is set to locate JSP files inside /WEB-INF/views/ with .jsp suffix.
+  - Enable secure login using a registration number and password.
 
-Multipart file upload size is limited to 2MB to handle student profile image uploads securely.
+  - Provide a personalized dashboard displaying logged-in student data and a directory of other students.
 
-2. Entity Module (Student Entity)
-The Student class represents the student entity in the system.
+  - Support profile updates, including image replacement.
 
-It contains fields for student details such as ID, name, registration number, email, phone number, password, and profile image.
+  - Handle multipart file uploads (e.g., profile pictures) with a secure file size limit.
 
-The class is annotated with JPA annotations to map it to the corresponding database table.
+  - Present information dynamically using JSP views, offering a simple and user-friendly interface.
 
-The profile image is stored as a byte array to support image upload and retrieval.
+### Project Images:
 
-3. Repository Module
-The StudentRepository interface extends JpaRepository to provide CRUD operations on student data.
+![image](https://github.com/user-attachments/assets/a00f3dca-494d-4920-afdc-564eb879a49f)
 
-It includes custom methods to find students by registration number and password for authentication purposes.
+![image](https://github.com/user-attachments/assets/19231ad2-f367-4ffa-8924-d0974b63c8d9)
 
-The repository abstracts the database interaction layer, enabling easy querying and modification of student records.
+![image](https://github.com/user-attachments/assets/165698fa-c0f0-4efa-a5ff-dfb09c3f860d)
 
-4. CRUD Helper Module (StudentCrud)
-The StudentCrud class provides explicit database operations such as saving, updating, and fetching student records.
+![image](https://github.com/user-attachments/assets/f9f75ce1-05bc-4832-8771-ab444d50fc65)
 
-It acts as a DAO-style helper class encapsulating complex data access logic.
+![image](https://github.com/user-attachments/assets/82783b78-0b0e-4931-bffa-925506f2fdaf)
 
-This class helps separate the data persistence logic from the controller and service layers.
+![image](https://github.com/user-attachments/assets/f3c47a8e-7578-44a6-8300-1b081b03876d)
 
-5. Service Module
-The StudentService class acts as an intermediary between the controller and repository layers.
 
-It handles business logic such as validation, processing of student data, and managing image upload functionality.
 
-This module ensures a clean separation of concerns and promotes modularity in the application.
 
-6. Controller Module
-The StudentController class manages HTTP requests and user interactions.
 
-It contains endpoints for student registration, login, profile update, dashboard display, image retrieval, and logout.
 
-Session management is used to maintain logged-in user state securely.
-
-It handles form data including multipart image uploads and passes them to the service layer.
-
-On successful login, it fetches the student’s details and the list of all other students to display on the dashboard.
-
-7. View Module (JSP Pages)
-JSP pages provide the user interface for different application functions.
-
-index.jsp serves as the landing page offering navigation to registration and login.
-
-registerPage.jsp allows users to input student details and upload a profile picture.
-
-loginPage.jsp provides a login form and displays error messages on failure.
-
-updatePage.jsp presents the logged-in user with their current details for editing and image replacement.
-
-login_dashboard.jsp displays the logged-in student's information alongside a list of other registered students with their profile pictures, and provides options for updating profile or logging out.
-
-8. Additional Features
-Profile images are stored and retrieved as binary data, allowing students to have personal photos displayed in the application.
-
-Error messages and validations are shown in the views for better user experience.
-
-The application follows MVC architecture, promoting maintainability and scalability.
-
-All sensitive data like passwords are handled carefully to ensure security during authentication.
 
