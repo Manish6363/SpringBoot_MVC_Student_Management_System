@@ -27,7 +27,7 @@
 ## Purpose of the Project
 The primary goal of this application is to demonstrate the implementation of a real-world web-based CRUD system using modern technologies while solving a practical problem—managing student data efficiently. This includes capturing student information such as name, contact details, registration number, and profile image in a central system.
 
-The system is tailored to:
+The system is designed to:
 
   - Allow student self-registration with personal and academic details.
 
