@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+#container {
+	width: 350px;
+	/* border: 2px solid red; */
+	border-radius: 20px;
+	text-align: center;
+	padding: 20px;
+	margin: auto;
+	margin-top: 10rem;
+	background-color: rgb(177, 223, 247);
+	color: white;
+}
+
+.filed {
+	margin: 10px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+}
+
+form {
+	text-align: center;
+	font-size: larger;
+}
+
+input:hover {
+	background-color: rgb(223, 232, 210);
+}
+
+button {
+	background-color: rgb(62, 196, 62);
+	color: white;
+	font-size: medium;
+	border-radius: 18px;
+	padding: 5px 12px;
+}
+
+button:hover {
+	background-color: chartreuse;
+}
